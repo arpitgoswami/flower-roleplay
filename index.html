@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>PulseRoleplay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <main>
+      <section id="keyScreen" class="screen active">
+        <div class="auth-shell">
+          <div class="auth-copy">
+            <span class="badge">Roleplay Studio</span>
+            <h1>Build immersive conversations with a cleaner, modern workspace.</h1>
+            <p>Connect your Pollinations key, pick a scenario, and chat inside a focused desktop-ready interface.</p>
+          </div>
+          <div class="auth-card">
+            <h2>Connect API Key</h2>
+            <p class="muted">Your key stays in this browser only.</p>
+            <form id="keyForm" class="stack-form">
+              <label class="input-group">
+                <span>Pollinations API key</span>
+                <input id="apiKeyInput" type="password" placeholder="pk_... or sk_..." autocomplete="off" required>
+              </label>
+              <button class="primary-button" type="submit">Continue</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="discoverScreen" class="screen">
+        <div class="workspace-shell">
+          <header class="workspace-topbar">
+            <div>
+              <span class="badge">PulseRoleplay</span>
+              <h1>Characters</h1>
+            </div>
+            <button id="openSettingsButton" class="secondary-button" type="button">Settings</button>
+          </header>
+
+          <div class="toolbar">
+            <label class="search-bar">
+              <span class="search-icon">Search</span>
+              <input id="searchInput" type="text" placeholder="Search by character or scenario" autocomplete="off">
+            </label>
+          </div>
+
+          <div id="characterGrid" class="character-grid"></div>
+        </div>
+      </section>
+
+      <section id="chatScreen" class="screen">
+        <div class="workspace-shell workspace-shell--chat">
+          <header class="workspace-topbar workspace-topbar--chat">
+            <div class="chat-title-group">
+              <button id="backButton" class="icon-button" type="button" aria-label="Go back">&#8592;</button>
+              <div id="characterHero" class="chat-hero"></div>
+            </div>
+            <div class="chat-actions">
+              <button id="resetChatButton" class="icon-button icon-button--danger" type="button" aria-label="Reset chat">&#10226;</button>
+              <button id="chatSettingsButton" class="icon-button" type="button" aria-label="Open settings">&#9881;</button>
+            </div>
+          </header>
+
+          <article class="chat-layout">
+            <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+            <form id="chatForm" class="chat-form">
+              <input id="chatInput" type="text" placeholder="Type your next message..." autocomplete="off">
+              <button id="sendButton" class="icon-button icon-button--accent" type="submit" aria-label="Send or continue">&#10148;</button>
+            </form>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="settingsDialog" class="settings-dialog">
+    <form method="dialog" class="settings-card">
+      <div class="settings-header">
+        <div class="settings-header__copy">
+          <span class="badge">Settings</span>
+          <h2>API Access</h2>
+        </div>
+        <button class="secondary-button" value="cancel" type="submit">Close</button>
+      </div>
+      <label class="input-group">
+        <span>Saved key</span>
+        <input id="settingsApiKeyInput" type="password" placeholder="Update your key">
+      </label>
+      <div class="settings-actions">
+        <button id="saveSettingsButton" class="primary-button" value="default" type="button">Save</button>
+        <button id="clearKeyButton" class="secondary-button" value="default" type="button">Clear</button>
+      </div>
+    </form>
+  </dialog>
+
+  <template id="characterCardTemplate">
+    <button class="character-card" type="button">
+      <div class="character-card__art"></div>
+      <div class="character-card__content">
+        <span class="character-card__badge"></span>
+        <h3></h3>
+        <p class="character-card__story"></p>
+      </div>
+    </button>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
