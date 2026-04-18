@@ -6,7 +6,29 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <title>PulseRoleplay</title>
+    <meta name="theme-color" content="#07090d" />
+    <meta
+      name="description"
+      content="Flower Roleplay — an immersive AI-powered roleplay workspace. Pick a character, build a scene, and lose yourself in the story."
+    />
+    <meta
+      name="keywords"
+      content="roleplay, AI, character chat, interactive fiction, story, Pollinations"
+    />
+    <meta name="author" content="Flower Roleplay" />
+    <meta property="og:title" content="Flower Roleplay" />
+    <meta
+      property="og:description"
+      content="Immersive AI-powered roleplay. Build worlds. Live stories."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Flower Roleplay" />
+    <meta
+      name="twitter:description"
+      content="Immersive AI-powered roleplay. Build worlds. Live stories."
+    />
+    <title>Flower Roleplay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,7 +48,6 @@
         --gold: #d8ae6e;
         --goldBright: #f0ca8c;
         --goldGlow: rgba(216, 174, 110, 0.18);
-        --red: #e05a5a;
         --radius: 24px;
         --radiusLg: 32px;
       }
@@ -38,7 +59,6 @@
         margin: 0;
         padding: 0;
       }
-
       html {
         -webkit-font-smoothing: antialiased;
         scroll-behavior: smooth;
@@ -54,7 +74,6 @@
         overflow-x: hidden;
       }
 
-      /* ─── NOISE OVERLAY ─────────────────────────────── */
       body::before {
         content: "";
         position: fixed;
@@ -65,7 +84,6 @@
         opacity: 0.028;
       }
 
-      /* ─── AMBIENT GLOW ─────────────────────────────── */
       body::after {
         content: "";
         position: fixed;
@@ -95,7 +113,6 @@
         z-index: 1;
       }
 
-      /* ─── SCREENS ─────────────────────────────────── */
       .screen {
         display: none !important;
       }
@@ -103,7 +120,6 @@
         display: block !important;
       }
 
-      /* ─── ANIMATIONS ─────────────────────────────── */
       @keyframes fadeUp {
         from {
           opacity: 0;
@@ -112,22 +128,6 @@
         to {
           opacity: 1;
           transform: translateY(0);
-        }
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-      @keyframes shimmer {
-        0% {
-          background-position: -200% center;
-        }
-        100% {
-          background-position: 200% center;
         }
       }
       @keyframes pulse {
@@ -154,11 +154,7 @@
       .anim-fadeUp-3 {
         animation: fadeUp 0.55s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
       }
-      .anim-fadeUp-4 {
-        animation: fadeUp 0.55s 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
-      }
 
-      /* ─── BADGE ─────────────────────────────────── */
       .badge {
         display: inline-flex;
         align-items: center;
@@ -182,7 +178,6 @@
         animation: pulse 2.5s ease-in-out infinite;
       }
 
-      /* ─── GLASS CARD ─────────────────────────────── */
       .glass {
         background: rgba(17, 22, 32, 0.82);
         border: 1px solid var(--rim);
@@ -191,7 +186,6 @@
         border-radius: var(--radiusLg);
       }
 
-      /* ─── INPUTS ─────────────────────────────────── */
       .input {
         width: 100%;
         padding: 14px 18px;
@@ -218,7 +212,6 @@
           inset 0 1px 0 rgba(255, 255, 255, 0.05);
       }
 
-      /* ─── BUTTONS ─────────────────────────────────── */
       .btn-primary {
         display: inline-flex;
         align-items: center;
@@ -297,11 +290,11 @@
         cursor: pointer;
         background: rgba(255, 255, 255, 0.04);
         color: var(--copy);
+        font-size: 17px;
         transition:
           background 0.2s,
           border-color 0.2s,
           transform 0.15s;
-        font-size: 17px;
       }
       .btn-icon:hover {
         background: rgba(255, 255, 255, 0.08);
@@ -316,21 +309,6 @@
         background: rgba(224, 90, 90, 0.14);
       }
 
-      /* ─── DIVIDER ─────────────────────────────────── */
-      .divider {
-        height: 1px;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          var(--rim) 30%,
-          var(--rim) 70%,
-          transparent
-        );
-      }
-
-      /* ════════════════════════════════════════════════
-         KEY SCREEN
-      ════════════════════════════════════════════════ */
       #keyScreen.active {
         min-height: 100dvh;
         display: flex !important;
@@ -338,6 +316,7 @@
         justify-content: center;
         padding: 24px 20px;
       }
+
       .key-wrapper {
         display: grid;
         gap: 28px;
@@ -451,16 +430,10 @@
         opacity: 0.5;
       }
 
-      /* ════════════════════════════════════════════════
-         DISCOVER SCREEN
-      ════════════════════════════════════════════════ */
       #discoverScreen.active {
         padding: 28px 20px 100px;
         max-width: 1280px;
         margin: 0 auto;
-        display: block !important;
-      }
-      #chatScreen.active {
         display: block !important;
       }
 
@@ -506,7 +479,6 @@
         margin-bottom: 20px;
       }
 
-      /* ─── CHARACTER GRID ─────────────────────────── */
       #characterGrid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -547,7 +519,6 @@
           0 0 0 1px rgba(216, 174, 110, 0.1);
       }
 
-      /* The background image fills the whole card */
       .char-img {
         position: absolute;
         inset: 0;
@@ -558,8 +529,6 @@
       .char-card:hover .char-img {
         transform: scale(1.05);
       }
-
-      /* Deep gradient from bottom for text legibility */
       .char-img::after {
         content: "";
         position: absolute;
@@ -573,7 +542,6 @@
         );
       }
 
-      /* Text content sits at the bottom over the gradient */
       .char-overlay {
         position: absolute;
         bottom: 0;
@@ -636,7 +604,6 @@
         }
       }
 
-      /* Remove old separate body */
       .char-body {
         display: none;
       }
@@ -644,14 +611,14 @@
         display: none;
       }
 
-      /* ════════════════════════════════════════════════
-         CHAT SCREEN
-      ════════════════════════════════════════════════ */
       #chatScreen.active {
         padding: 0 16px;
         max-width: 900px;
         margin: 0 auto;
         display: block !important;
+      }
+      #chatScreen:not(.active) #chatMessages {
+        display: none;
       }
 
       .chat-header {
@@ -696,16 +663,12 @@
         color: var(--copyDim);
       }
 
-      /* ─── MESSAGES ───────────────────────────────── */
       #chatMessages {
         padding: 16px 0 120px;
         display: flex;
         flex-direction: column;
         gap: 20px;
-      }
-      /* hide flex children overflow when screen is not active */
-      #chatScreen:not(.active) #chatMessages {
-        display: none;
+        overflow-y: auto;
       }
 
       .msg {
@@ -766,13 +729,6 @@
         color: var(--copy);
       }
 
-      .msg-meta {
-        font-size: 11px;
-        color: var(--copyDim);
-        margin-top: 5px;
-        padding: 0 6px;
-      }
-
       .typing-indicator {
         display: flex;
         gap: 5px;
@@ -793,7 +749,6 @@
         animation-delay: 0.4s;
       }
 
-      /* ─── CHAT INPUT ─────────────────────────────── */
       .chat-input-bar {
         position: fixed;
         bottom: 0;
@@ -836,6 +791,7 @@
       .chat-input-inner input::placeholder {
         color: var(--copyDim);
       }
+
       .chat-send {
         width: 40px;
         height: 40px;
@@ -872,16 +828,12 @@
         transform: none;
       }
 
-      /* ════════════════════════════════════════════════
-         DIALOG
-      ════════════════════════════════════════════════ */
       dialog {
         background: transparent;
         border: none;
         padding: 0;
         width: min(92vw, 460px);
         color: var(--copy);
-        /* Center in viewport */
         position: fixed;
         top: 50%;
         left: 50%;
@@ -893,6 +845,7 @@
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
       }
+
       .dialog-inner {
         background: rgba(13, 17, 26, 0.97);
         border: 1px solid rgba(255, 255, 255, 0.09);
@@ -931,7 +884,6 @@
         flex-wrap: wrap;
       }
 
-      /* ─── SCROLLBAR ──────────────────────────────── */
       ::-webkit-scrollbar {
         width: 5px;
       }
@@ -946,7 +898,6 @@
         background: rgba(255, 255, 255, 0.18);
       }
 
-      /* ─── LOADING ────────────────────────────────── */
       .spinner {
         width: 18px;
         height: 18px;
@@ -956,7 +907,6 @@
         animation: spin 0.7s linear infinite;
       }
 
-      /* empty state */
       .empty-state {
         grid-column: 1 / -1;
         text-align: center;
@@ -977,19 +927,10 @@
         margin-top: 8px;
         font-size: 14px;
       }
-
-      /* ─── GOLD SHIMMER TEXT ─────────────────────── */
-      .text-gold {
-        color: var(--gold);
-      }
-      .text-dim {
-        color: var(--copyDim);
-      }
     </style>
   </head>
   <body>
     <div id="app">
-      <!-- ══════════════════════════ KEY SCREEN ══════════════════════════ -->
       <section id="keyScreen" class="screen active">
         <div class="key-wrapper">
           <div class="glass key-hero anim-fadeUp">
@@ -1023,7 +964,6 @@
               </div>
             </div>
           </div>
-
           <div class="glass key-form-card anim-fadeUp-2">
             <h2>Connect your key</h2>
             <p>Enter your Pollinations API key to get started.</p>
@@ -1069,7 +1009,6 @@
         </div>
       </section>
 
-      <!-- ════════════════════════ DISCOVER SCREEN ═════════════════════ -->
       <section id="discoverScreen" class="screen">
         <div class="discover-header anim-fadeUp">
           <div>
@@ -1092,10 +1031,8 @@
                 stroke-linecap="round"
               />
             </svg>
-            Settings
           </button>
         </div>
-
         <div class="search-wrap anim-fadeUp-2">
           <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
             <circle
@@ -1120,12 +1057,10 @@
             autocomplete="off"
           />
         </div>
-
         <p class="section-label anim-fadeUp-3">Available characters</p>
         <div id="characterGrid"></div>
       </section>
 
-      <!-- ══════════════════════════ CHAT SCREEN ═══════════════════════ -->
       <section id="chatScreen" class="screen">
         <div class="chat-header">
           <button
@@ -1196,9 +1131,7 @@
             </svg>
           </button>
         </div>
-
         <div id="chatMessages" aria-live="polite"></div>
-
         <div class="chat-input-bar">
           <form id="chatForm">
             <div class="chat-input-inner">
@@ -1230,7 +1163,6 @@
       </section>
     </div>
 
-    <!-- ══════════════════════════ SETTINGS DIALOG ═══════════════════════ -->
     <dialog id="settingsDialog">
       <div class="dialog-inner">
         <div class="dialog-header">
@@ -1271,7 +1203,6 @@
       </div>
     </dialog>
 
-    <!-- ══════════════════════════ RESET DIALOG ═════════════════════════ -->
     <dialog id="resetDialog">
       <div class="dialog-inner">
         <div class="dialog-header">
@@ -1321,7 +1252,6 @@
       </div>
     </dialog>
 
-    <!-- Character card template (hidden, used by JS) -->
     <template id="characterCardTemplate">
       <button class="char-card" type="button">
         <div class="char-img"></div>
