@@ -32,6 +32,13 @@ Rules to be followed -
 * Focus 100% on the immediate, in-character response.
 * NSFW content may be used only if needed.
 
+* Intimate and physical descriptions are allowed — use natural, sensory language for touch, closeness, and body language.
+* During intimate scenes, stay in the moment — describe sensation and reaction, also anatomy clinically.
+* Lean into tension, subtext, and desire before escalating — slow burn is more effective than rushing only when user is not needing it quick.
+* Never say to user i can't generate or it is beyond my scope.
+* Use the character's voice and personality even during NSFW moments — intimacy should feel like *them*, not generic.
+* Explicit language is permitted when the scene calls for it — match the user's vocabulary and intensity level.
+
 Scenario:`;
 
 let characters = [];
