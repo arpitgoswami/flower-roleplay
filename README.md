@@ -4,9 +4,9 @@ A modern web-based roleplay application with a narrator-style AI flow, character
 
 ## Preview
 
-![Anaya](https://image.pollinations.ai/prompt/beautiful%20indian%20wife%20at%20home%20warm%20romantic%20cinematic%20portrait?width=1200&height=720&nologo=true)
+![Anaya](https://image.pollinations.ai/prompt/beautiful%20indian%20wife%20at%20home%20warm%20romantic%20cinematic%20portrait?width=1200&height=1200&nologo=true)
 
-![Riya](https://image.pollinations.ai/prompt/stylish%20young%20woman%20in%20rainy%20cafe%20romantic%20cinematic%20portrait?width=1200&height=720&nologo=true)
+![Riya](https://image.pollinations.ai/prompt/stylish%20young%20woman%20in%20rainy%20cafe%20romantic%20cinematic%20portrait?width=1200&height=1200&nologo=true)
 
 ## Features
 
